@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140107084428) do
+ActiveRecord::Schema.define(:version => 20140107114401) do
 
   create_table "users", :force => true do |t|
     t.string   "name"
@@ -26,13 +26,16 @@ ActiveRecord::Schema.define(:version => 20140107084428) do
     t.text     "caddress"
     t.string   "branch"
     t.string   "course_intrested"
-    t.boolean  "contact_you"
+    t.string   "contact_you"
     t.string   "program_name"
     t.string   "program_incharge"
     t.integer  "program_hour"
     t.integer  "program_week"
     t.date     "start"
     t.date     "end"
+    t.date     "date"
+    t.date     "sdate"
+    t.date     "rdate"
     t.integer  "rfee"
     t.integer  "cfee"
     t.integer  "cmaterial"
@@ -47,6 +50,10 @@ ActiveRecord::Schema.define(:version => 20140107084428) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
 end

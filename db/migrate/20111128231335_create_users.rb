@@ -13,13 +13,16 @@ class CreateUsers < ActiveRecord::Migration
       t.text :caddress
       t.string :branch
       t.string :course_intrested
-      t.boolean :contact_you
+      t.string :contact_you
       t.string :program_name
       t.string :program_incharge
       t.integer :program_hour
       t.integer :program_week
       t.date :start
       t.date :end
+      t.date :date
+      t.date :sdate
+      t.date :rdate
       t.integer :rfee
       t.integer :cfee
       t.integer :cmaterial

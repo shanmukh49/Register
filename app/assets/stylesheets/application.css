@@ -27,7 +27,7 @@ a {
 }
 
 #container {
-  width: 75%;
+  width: 1200px;
   margin: 0 auto;
   background-color: #FFF;
   padding: 20px 40px;
@@ -130,7 +130,7 @@ form .field, form .actions {
 }
 
 #content {
-  width: 500px;
+  width: 900px;
    overflow: auto;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -144,4 +144,13 @@ form .field, form .actions {
   padding-right: 10px;
   padding-left: 150px;
   /*background-color: #FFFFFF;*/
+}
+.date{
+  float: right;
+}
+.photo{
+  float: right;
+  border: 1px solid #5EAC1A;
+  width:150px;
+  height:150px;
 }

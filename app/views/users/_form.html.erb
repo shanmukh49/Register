@@ -1,4 +1,5 @@
 <%= form_for(@user) do |f| %>
+
   <% if @user.errors.any? %>
     <div class="error_messages">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -10,109 +11,131 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
+  <table>
+<tr><td><div class="date">
+    <%= f.label :date,"Date:" %>
+    <%= f.date_select(:date,:start_year => 2012) %>
+  </div></td></tr>
+ <tr> <td><div class="field">
+    <%= f.label :name,"Name:" %>
     <%= f.text_field :name %>
-  </div>
-  <div class="field">
-  <%= f.label :photo, "Photo" %>
+  </div></td></tr><br>
+    <tr><td><div class="photo">
+  <%= f.label :photo, "Photo:" %>
       <%= f.file_field :photo %>
-    </div>
-    <div class="field">
-    <%= f.label :gender %><br />
-    <%= f.select :gender, %w[Male Female Unspecified] %>
-  </div>
-  <div class="field">
-    <%= f.label :Address %><br />
-    <%= f.text_area :address %>
-  </div>
-  <div class="field">
-    <%= f.label :Telephone_No %><br />
+    </div></td></tr>
+    <tr><td><div class="field">
+    <%= f.label :gender,"Gender:" %>
+    <%= f.select :gender, %w[Male Female] %>
+  </div></td></tr>
+  <tr><td><div class="field">
+    <%= f.label :Address,"Address:" %>
+    <%= f.text_area :address,:size => "13x1"  %>
+  </div></td></tr>
+  <tr><td><div class="field">
+    <%= f.label :Telephone_No,"Telephone No:" %>
     <%= f.text_field :telephone %>
-  </div>
-  <div class="field">
-    <%= f.label :Mobile %><br />
+  </div></td>
+  <td><div class="field">
+    <%= f.label :Mobile,"Mobile:" %>
     <%= f.text_field :mobile %>
-  </div>
-  <div class="field">
-    <%= f.label :Email_address %><br />
+  </div></td></tr>
+ <tr> <td><div class="field">
+    <%= f.label :Email_address,"Email Address:" %>
     <%= f.text_field :email %>
-  </div>
-   <div class="field">
-    <%= f.label :Course_Enrolled %><br />
+  </div></td></tr>
+  <tr><td> <div class="field">
+    <%= f.label :Course_Enrolled,"Course Enrolled:" %>
     <%= f.text_field :course_enrolled %>
-  </div>
-  <div class="field">
-    <%= f.label :Educational_Qualifications %><br />
-    <%= f.text_field :education %>
-  </div>
-  <div class="field">
-    <%= f.label :College_Name %><br />
+  </div></td></tr>
+  <tr><td><div class="field">
+    <%= f.label :Educational_Qualifications,"Educational Qualifications:" %>
+    <%= f.select :education, %w[B.Tech M.tech M.C.A M.B.A] %>
+  </div></td></tr>
+  <tr><td><div class="field">
+    <%= f.label :College_Name,"College Name:" %>
     <%= f.text_field :college_name %>
-  </div>
-  <div class="field">
-    <%= f.label :Address %><br />
-    <%= f.text_area :caddress %>
-  </div>
-  <div class="field">
-    <%= f.label :Branch %><br />
+  </div></td></tr>
+  <tr><td><div class="field">
+    <%= f.label :Address,"Address:" %>
+    <%= f.text_area :caddress,:size => "13x1"  %>
+  </div></td></tr>
+  <tr><td><div class="field">
+    <%= f.label :Branch,"Branch / Semester:" %>
     <%= f.text_field :branch %>
-  </div>
-  <div class="field">
-    <%= f.label :Course_Interested %><br />
+  </div></td>
+  <td><div class="field">
+    <%= f.label :Course_Interested,"Course Interested:" %>
     <%= f.text_field :course_intrested %>
-  </div>
-  <div class="field">
-    <%= f.label :Contact_You %><br />
-    <%= f.text_field :contact_you %>
-  </div>
-  <div class="field">
-    <%= f.label :Program_Name %><br />
+  </div></td></tr>
+  <tr><td><div class="field">
+    <%= f.label :Contact_You,"How you would like us to contact you?" %>
+    <%= f.select :contact_you, %w[By_Email By_Phone By_SMS] %> 
+  </div></td></tr>
+  <tr><td><div class="field">
+    <%= f.label :Program_Name,"Program Name (as registered with Siltek):" %>
     <%= f.text_field :program_name %>
-  </div>
-  <div class="field">
-    <%= f.label :Program_Incharge %><br />
+  </div></td></tr>
+  <tr><td><div class="field">
+    <%= f.label :Program_Incharge,"Program In-charge:" %>
     <%= f.text_field :program_incharge %>
-  </div>
-  <div class="field">
-    <%= f.label :Program_Hour %><br />
+  </div></td></tr>
+  <tr><td><div class="field">
+    <%= f.label :Program_Hour,"Program Duration in Hours:" %>
     <%= f.text_field :program_hour %>
-  </div>
-  <div class="field">
-    <%= f.label :Program_Week %><br />
+  </div></td>
+  <td><div class="field">
+    <%= f.label :Program_Week,"Program Duration in Weeks:" %>
     <%= f.text_field :program_week %>
-  </div>
-  
+  </div></td></tr>
+  <tr><td>
   <div class="field">
-    <%= f.label :Start_date %><br />
+    <%= f.label :Start_date,"Program Start Date:" %>
     <%= f.date_select(:start,:start_year => 2012) %>
-  </div>
-   <div class="field">
-    <%= f.label :End_date %><br />
+  </div></td>
+  <td> <div class="field">
+    <%= f.label :End_date,"Program End Date:" %>
     <%= f.date_select(:end,:end_year => 2050) %>
-  </div>
-  <div class="field">
-    <%= f.label :Registration_Fees %><br />
+  </div></td></tr>
+  <tr>
+   <td> <b>Fees Details:</b></td></tr>
+  <tr><td><b>Program Costs</b></td>
+    <td><b>Amount</b></td></tr>
+  
+  <tr><td><div class="field">
+    <%= f.label :Registration_Fees,"Registration/Application Fee:" %>
     <%= f.text_field :rfee %>
-  </div>
-  <div class="field">
-    <%= f.label :Course_Fees %><br />
+  </div></td></tr>
+  <tr><td><div class="field">
+    <%= f.label :Course_Fees,"Course Fee:" %>
     <%= f.text_field :cfee %>
-  </div>
-  <div class="field">
-    <%= f.label :Course_material %><br />
+  </div></td></tr>
+  <tr><td><div class="field">
+    <%= f.label :Course_material,"Course Material /Other (please specify):" %>
     <%= f.text_field :cmaterial %>
-  </div>
-  <div class="field">
-    <%= f.label :Total_Cost %><br />
+  </div></td></tr>
+  <tr><td><div class="field">
+    <%= f.label :Total_Cost,"TOTAL PROGRAM COST:" %>
     <%= f.text_field :total_cost %>
-  </div>
-  <div class="field">
-  <%= f.label :avatar, "signature" %>
+  </div></td></tr>
+  <tr><td><div class="field">
+  <%= f.label :avatar, "Student Signature" %>
       <%= f.file_field :avatar %>
-    </div>
-  <div class="actions">
+    </div></td>
+<td><div class="date">
+    <%= f.label :sdate,"Date:" %>
+    <%= f.date_select(:sdate,:start_year => 2012) %>
+  </div></td></tr>
+  <tr><td><div class="field">
+  <%= f.label :image, "Signature of the Representative" %>
+      <%= f.file_field :image %>
+    </div></td>
+<td><div class="date">
+    <%= f.label :rdate,"Date:" %>
+    <%= f.date_select(:rdate,:start_year => 2012) %>
+  </div></td></tr><br>
+  <tr><td><div class="actions">
     <%= f.submit %>
-  </div>
+  </div></td></tr>
+</table>
 <% end %>

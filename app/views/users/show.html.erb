@@ -1,4 +1,8 @@
 <h1>Student Information</h1>
+<p>
+	<b>Date:</b>
+  <%= best_in_place @user, :date %>
+</p>
 
 <p>
   <b>Name:</b>
@@ -102,5 +106,17 @@
 	<%= link_to(image_tag(@user.avatar.url(:original)), @user.avatar.url) if @user.avatar? %>
 
 	</p>
+<p>
+	<b>Date:</b>
+  <%= best_in_place @user, :sdate %>
+</p>
+	<p>
+	<%= link_to(image_tag(@user.image.url(:original)), @user.image.url) if @user.image? %>
+
+	</p>
+	<p>
+	<b>Date:</b>
+  <%= best_in_place @user, :rdate %>
+</p>
 
 <%= link_to 'Edit Profile', edit_user_path(@user) %>
