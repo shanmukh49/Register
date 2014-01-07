@@ -1,0 +1,106 @@
+<h1>Student Information</h1>
+
+<p>
+  <b>Name:</b>
+  <%= best_in_place @user, :name,:type => :input %>
+</p>
+<p>
+	<%= link_to(image_tag(@user.photo.url(:original)), @user.photo.url) if @user.photo? %>
+
+	</p>
+
+	<p>
+  <b>Gender:</b>
+  <%= best_in_place @user, :gender, type: :select, collection: [["Male", "Male"], ["Female", "Female"], ["", "Unspecified"]] %>
+</p>
+<p>
+  <b>Telephone No:</b>
+  <%= best_in_place @user, :telephone,:type => :input %>
+</p>
+<p>
+  <b>Mobile:</b>
+  <%= best_in_place @user, :mobile,:type => :input %>
+</p>
+<p>
+  <b>Email Address:</b>
+  <%= best_in_place @user, :email %>
+</p>
+<p>
+  <b>Course Enrolled:</b>
+  <%= best_in_place @user, :course_enrolled,:type => :input %>
+</p>
+<p>
+  <b>Educational Qualifications:</b>
+  <%= best_in_place @user, :education %>
+</p>
+
+<p>
+  <b>College Name:</b>
+  <%= best_in_place @user, :college_name %>
+</p>
+	<p>
+  <b>Address:</b>
+  <%= best_in_place @user, :caddress,type: :textarea %>
+</p>
+
+
+<p>
+  <b>Branch/semeseter:</b>
+  <%= best_in_place @user, :branch %>
+</p>
+<p>
+	<b>Course Interested:</b>
+  <%= best_in_place @user, :course_intrested, type: :textarea %>
+</p>
+<p>
+	<b>How you would like us to contact you?</b>
+  <%= best_in_place @user, :contact_you %>
+</p>
+<p>
+	<b>Program Name (as registered with Siltek):</b>
+  <%= best_in_place @user, :program_name %>
+</p>
+
+<p>
+	<b>Program In-charge:</b>
+  <%= best_in_place @user, :program_incharge %>
+</p>
+<p>
+	<b>Program Duration in Hours:</b>
+  <%= best_in_place @user, :program_hour %>
+</p>
+<p>
+	<b>Program Duration in Weeks:</b>
+  <%= best_in_place @user, :program_week %>
+</p>
+<p>
+	<b>Program Start Date:</b>
+  <%= best_in_place @user, :start %>
+</p>
+<p>
+	<b>Program End Date: </b>
+  <%= best_in_place @user, :end %>
+</p>
+<p><b>Fees Details: </b>
+	<b>Registration/Application Fee: </b>
+  <%= best_in_place @user, :rfee %>
+</p>
+<p>
+	<b>Course Fee: </b>
+  <%= best_in_place @user, :cfee %>
+</p>
+<p>
+	<b>Course Material /Other (please specify): </b>
+  <%= best_in_place @user, :cmaterial %>
+</p>
+<p>
+	<b>TOTAL PROGRAM COST:</b>
+  <%= best_in_place @user, :total_cost %>
+</p>
+
+<p>
+	<%= link_to(image_tag(@user.avatar.url(:original)), @user.avatar.url) if @user.avatar? %>
+
+	</p>
+
+<%= link_to 'Edit Profile', edit_user_path(@user) %>

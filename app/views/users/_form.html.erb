@@ -1,0 +1,118 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+  <%= f.label :photo, "Photo" %>
+      <%= f.file_field :photo %>
+    </div>
+    <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.select :gender, %w[Male Female Unspecified] %>
+  </div>
+  <div class="field">
+    <%= f.label :Address %><br />
+    <%= f.text_area :address %>
+  </div>
+  <div class="field">
+    <%= f.label :Telephone_No %><br />
+    <%= f.text_field :telephone %>
+  </div>
+  <div class="field">
+    <%= f.label :Mobile %><br />
+    <%= f.text_field :mobile %>
+  </div>
+  <div class="field">
+    <%= f.label :Email_address %><br />
+    <%= f.text_field :email %>
+  </div>
+   <div class="field">
+    <%= f.label :Course_Enrolled %><br />
+    <%= f.text_field :course_enrolled %>
+  </div>
+  <div class="field">
+    <%= f.label :Educational_Qualifications %><br />
+    <%= f.text_field :education %>
+  </div>
+  <div class="field">
+    <%= f.label :College_Name %><br />
+    <%= f.text_field :college_name %>
+  </div>
+  <div class="field">
+    <%= f.label :Address %><br />
+    <%= f.text_area :caddress %>
+  </div>
+  <div class="field">
+    <%= f.label :Branch %><br />
+    <%= f.text_field :branch %>
+  </div>
+  <div class="field">
+    <%= f.label :Course_Interested %><br />
+    <%= f.text_field :course_intrested %>
+  </div>
+  <div class="field">
+    <%= f.label :Contact_You %><br />
+    <%= f.text_field :contact_you %>
+  </div>
+  <div class="field">
+    <%= f.label :Program_Name %><br />
+    <%= f.text_field :program_name %>
+  </div>
+  <div class="field">
+    <%= f.label :Program_Incharge %><br />
+    <%= f.text_field :program_incharge %>
+  </div>
+  <div class="field">
+    <%= f.label :Program_Hour %><br />
+    <%= f.text_field :program_hour %>
+  </div>
+  <div class="field">
+    <%= f.label :Program_Week %><br />
+    <%= f.text_field :program_week %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :Start_date %><br />
+    <%= f.date_select(:start,:start_year => 2012) %>
+  </div>
+   <div class="field">
+    <%= f.label :End_date %><br />
+    <%= f.date_select(:end,:end_year => 2050) %>
+  </div>
+  <div class="field">
+    <%= f.label :Registration_Fees %><br />
+    <%= f.text_field :rfee %>
+  </div>
+  <div class="field">
+    <%= f.label :Course_Fees %><br />
+    <%= f.text_field :cfee %>
+  </div>
+  <div class="field">
+    <%= f.label :Course_material %><br />
+    <%= f.text_field :cmaterial %>
+  </div>
+  <div class="field">
+    <%= f.label :Total_Cost %><br />
+    <%= f.text_field :total_cost %>
+  </div>
+  <div class="field">
+  <%= f.label :avatar, "signature" %>
+      <%= f.file_field :avatar %>
+    </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

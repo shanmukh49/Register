@@ -1,0 +1,147 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+*/
+
+body {
+  background-color: #4B7399;
+  font-family: Verdana, Helvetica, Arial;
+  font-size: 14px;
+}
+
+a img {
+  border: none;
+}
+
+a {
+  color: #0000FF;
+}
+
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+#container {
+  width: 75%;
+  margin: 0 auto;
+  background-color: #FFF;
+  padding: 20px 40px;
+  border: solid 1px black;
+  margin-top: 20px;
+  position: relative;
+}
+
+#flash_notice, #flash_error, #flash_alert {
+  padding: 5px 8px;
+  margin: 10px 0;
+  margin-right: 150px;
+}
+
+#flash_notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+
+#flash_error, #flash_alert {
+  background-color: #FCC;
+  border: solid 1px #C66;
+}
+
+.field_with_errors {
+  display: inline;
+}
+
+.error_messages {
+  width: 400px;
+  border: 2px solid #CF0000;
+  padding: 0px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  font-size: 12px;
+}
+
+.error_messages h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 10px;
+  font-size: 12px;
+  margin: 0;
+  background-color: #c00;
+  color: #fff;
+}
+
+.error_messages p {
+  margin: 8px 10px;
+}
+
+form .field, form .actions {
+  margin: 12px 0;
+}
+
+.best_in_place {
+    cursor: pointer;
+    
+    border-radius: 5px;
+    transition: background 0.5s linear 0s;
+}
+
+.best_in_place:hover, #user_account .do_hover {
+  padding-right: 1.5em;
+  background: url("/assets/red_pen.png") no-repeat right;
+  background-color: #CCC;
+}
+.purr {
+  position: fixed;
+  top: 30px;
+  right: 100px;
+  width: 250px;
+  padding: 20px;
+  background-color: #FCC;
+  border: solid 2px #C66;
+  &:first-letter { text-transform: uppercase; }
+}
+
+.header {
+  height: 169px;
+  width: 900px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #fff;
+}
+#com_name {
+  
+   display: block;
+    left: 2.73%;
+    margin-left: 270px;
+    position: absolute;
+    top: 8px;
+    width: 800px;
+    height: 169px;
+    background-image: url('header2.jpg');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    z-index: 24;
+}
+
+#content {
+  width: 500px;
+   overflow: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 40px;
+  border: 1px solid #5EAC1A;
+  border-radius:4px;
+  margin-bottom: 40px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 150px;
+  /*background-color: #FFFFFF;*/
+}
