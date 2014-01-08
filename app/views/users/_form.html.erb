@@ -1,141 +1,147 @@
-<%= form_for(@user) do |f| %>
-
-  <% if @user.errors.any? %>
-    <div class="error_messages">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <table>
-<tr><td><div class="date">
-    <%= f.label :date,"Date:" %>
-    <%= f.date_select(:date,:start_year => 2012) %>
+<%= simple_form_for(@user) do |f| %>
+  
+  <table class="table">
+<tr><td></td>
+  <td><div class="field">
+    <%= f.input :date,label:"Date:", as: :date %>
   </div></td></tr>
  <tr> <td><div class="field">
-    <%= f.label :name,"Name:" %>
-    <%= f.text_field :name %>
-  </div></td></tr><br>
-    <tr><td><div class="photo">
-  <%= f.label :photo, "Photo:" %>
-      <%= f.file_field :photo %>
+    <%= f.input :name %>
+  </div></td></tr>
+    <tr><td></td>
+      <td><div class="photo">
+   <%= f.input :photo,as: :file,label: "upload your recent photograph" %>
     </div></td></tr>
     <tr><td><div class="field">
-    <%= f.label :gender,"Gender:" %>
-    <%= f.select :gender, %w[Male Female] %>
+   
+     <%= f.input :gender ,label:"Gender:",as: :radio_buttons,:collection => %w[Male Female] %>
+    
+  </div></td></tr>
+    <tr><td><div class="field">
+    <%= f.input :address,label:"Address:",as: :text,:input_html => { :cols => 13, :rows => 1 } %>
   </div></td></tr>
   <tr><td><div class="field">
-    <%= f.label :Address,"Address:" %>
-    <%= f.text_area :address,:size => "13x1"  %>
-  </div></td></tr>
-  <tr><td><div class="field">
-    <%= f.label :Telephone_No,"Telephone No:" %>
-    <%= f.text_field :telephone %>
+   
+  <%= f.input :telephone,label:"Telephone No:" %>
   </div></td>
-  <td><div class="field">
-    <%= f.label :Mobile,"Mobile:" %>
-    <%= f.text_field :mobile %>
+  <td><div class="mobile">
+    <%= f.input :mobile,label:"Mobile:" %>
   </div></td></tr>
  <tr> <td><div class="field">
-    <%= f.label :Email_address,"Email Address:" %>
-    <%= f.text_field :email %>
+    <%= f.input :email ,label:"Email Address:",as: :email %>
   </div></td></tr>
   <tr><td> <div class="field">
-    <%= f.label :Course_Enrolled,"Course Enrolled:" %>
-    <%= f.text_field :course_enrolled %>
+    <%= f.input :course_enrolled,label:"Course Enrolled:" %>
   </div></td></tr>
   <tr><td><div class="field">
-    <%= f.label :Educational_Qualifications,"Educational Qualifications:" %>
-    <%= f.select :education, %w[B.Tech M.tech M.C.A M.B.A] %>
+     <%#= f.label :Educational_Qualifications,"Educational Qualifications:" %>
+   
+
+<%= f.input :education,as: :check_boxes,label:"Educational Qualifications:", :collection => %w[B.Tech M.Tech M.C.A M.B.A ] %>
+
+
+
   </div></td></tr>
   <tr><td><div class="field">
-    <%= f.label :College_Name,"College Name:" %>
-    <%= f.text_field :college_name %>
+   <%= f.input :college_name,label:"College Name:" %>
+     </div></td></tr>
+  <tr><td><div class="field">
+    <%= f.input :caddress ,as: :text ,label: "Address",:input_html => { :cols => 13, :rows => 1 } %>
   </div></td></tr>
   <tr><td><div class="field">
-    <%= f.label :Address,"Address:" %>
-    <%= f.text_area :caddress,:size => "13x1"  %>
-  </div></td></tr>
-  <tr><td><div class="field">
-    <%= f.label :Branch,"Branch / Semester:" %>
-    <%= f.text_field :branch %>
+    <%= f.input :branch ,label: "Branch / Semester"%>
   </div></td>
   <td><div class="field">
-    <%= f.label :Course_Interested,"Course Interested:" %>
-    <%= f.text_field :course_intrested %>
+    <%= f.input :course_intrested,label:"Course Interested:" %>
+  </div></td></tr>
+
+  <tr><td><div class="field">
+    
+
+<%= f.input :contact_you, as: :check_boxes,label: "How you would like us to contact you?", :collection => %w[By-Email By-Phone By-SMS] %>
+
+  
+   
+  </div></td></tr>
+
+  <tr>
+   <th> <b>Program Information</b></th></tr>
+  <tr><th><b>(to be filled by the Admin)</b></th></tr>
+
+  <tr><td><div class="field">
+
+<%= f.input :program_name,label: "Program Name (as registered with Siltek):" %>
+    
   </div></td></tr>
   <tr><td><div class="field">
-    <%= f.label :Contact_You,"How you would like us to contact you?" %>
-    <%= f.select :contact_you, %w[By_Email By_Phone By_SMS] %> 
+    <%= f.input :program_incharge %>
   </div></td></tr>
   <tr><td><div class="field">
-    <%= f.label :Program_Name,"Program Name (as registered with Siltek):" %>
-    <%= f.text_field :program_name %>
-  </div></td></tr>
-  <tr><td><div class="field">
-    <%= f.label :Program_Incharge,"Program In-charge:" %>
-    <%= f.text_field :program_incharge %>
-  </div></td></tr>
-  <tr><td><div class="field">
-    <%= f.label :Program_Hour,"Program Duration in Hours:" %>
-    <%= f.text_field :program_hour %>
+    <%= f.input :program_hour,label: "Program Duration in Hours:" %>
+
   </div></td>
   <td><div class="field">
-    <%= f.label :Program_Week,"Program Duration in Weeks:" %>
-    <%= f.text_field :program_week %>
+    <%= f.input :program_week,label: "Program Duration in Weeks:" %>
+    
   </div></td></tr>
   <tr><td>
   <div class="field">
-    <%= f.label :Start_date,"Program Start Date:" %>
-    <%= f.date_select(:start,:start_year => 2012) %>
+    <%= f.input :start,as: :date,label: "Program Start Date:",:start_year => 2012 %>
+    
   </div></td>
   <td> <div class="field">
-    <%= f.label :End_date,"Program End Date:" %>
-    <%= f.date_select(:end,:end_year => 2050) %>
-  </div></td></tr>
+    <%= f.input :end,as: :date,label: "Program End Date:",:start_year => 2012 %></div></td></tr>
   <tr>
    <td> <b>Fees Details:</b></td></tr>
   <tr><td><b>Program Costs</b></td>
     <td><b>Amount</b></td></tr>
   
   <tr><td><div class="field">
-    <%= f.label :Registration_Fees,"Registration/Application Fee:" %>
-    <%= f.text_field :rfee %>
+    <%= f.input :rfee,label: "Registration / Application Fee:" %>
+    
   </div></td></tr>
   <tr><td><div class="field">
-    <%= f.label :Course_Fees,"Course Fee:" %>
-    <%= f.text_field :cfee %>
-  </div></td></tr>
+    <%= f.input :cfee, label: "Course Fee:" %>
+      </div></td></tr>
+
   <tr><td><div class="field">
-    <%= f.label :Course_material,"Course Material /Other (please specify):" %>
-    <%= f.text_field :cmaterial %>
-  </div></td></tr>
+    <%= f.input :cmaterial, label: "Course Material /Other (please specify):" %>
+      </div></td></tr>
+
   <tr><td><div class="field">
-    <%= f.label :Total_Cost,"TOTAL PROGRAM COST:" %>
-    <%= f.text_field :total_cost %>
-  </div></td></tr>
-  <tr><td><div class="field">
-  <%= f.label :avatar, "Student Signature" %>
-      <%= f.file_field :avatar %>
+    <%= f.input :total_cost, label: "TOTAL PROGRAM COST:" %>
+      </div></td></tr>
+<table border="0" cellspacing="5" cellpadding="5" class="table">
+      
+   <th> <b>STUDENT DECLARATION</b></th>
+  <tr><td><b>I DECLARE THAT:</b></td></tr>
+    <tr><td><li>If selected for project/training/placement program of Siltek Software solutions (I) Pvt. Ltd., I agree to abide by the rules and regulations of this enrolment for the program;</li></td></tr>
+  <tr><td><li>I have provided evidence to prove that I meet all the admission requirements for this program of study;</li></td></tr>
+<tr><td><li>I am responsible for my own safety while inside the Siltek premises and shall follow all safety precautions.</li></td></tr>
+<tr><td><li>I will not disclose to anyone any technical information relating to the project/training program without prior permission from concerned authorities of Siltek.</li></td></tr>
+<tr><td><li>The information provided is true and accurate to the best of my knowledge.</li></td></tr>
+
+
+  <tr><td><div class="photo">
+  <%= f.input :avatar, as: :file, label: "Student Signature" %>
+          </div></td>
+
+<td><div class="date">
+    <%= f.input :sdate,as: :date,label: "Date" %>
+      </div></td></tr>
+      <tr><th> <b>COMPANY DECLARATION</b></th></tr>
+  <tr><td width="700">The Company agrees to deliver the program according to the terms of this contract and certifies that the student has met the admission requirements for the program of study.</td></tr>
+      
+  <tr><td><div class="photo">
+    <%= f.input :attach, as: :file, label: "Signature of the Representative" %>
     </div></td>
 <td><div class="date">
-    <%= f.label :sdate,"Date:" %>
-    <%= f.date_select(:sdate,:start_year => 2012) %>
+  <%= f.input :rdate ,as: :date,label: "Date" %>
   </div></td></tr>
-  <tr><td><div class="field">
-  <%= f.label :image, "Signature of the Representative" %>
-      <%= f.file_field :image %>
-    </div></td>
-<td><div class="date">
-    <%= f.label :rdate,"Date:" %>
-    <%= f.date_select(:rdate,:start_year => 2012) %>
-  </div></td></tr><br>
-  <tr><td><div class="actions">
-    <%= f.submit %>
-  </div></td></tr>
+</table>
+  <tr><td><div id="reset">
+<%= f.submit "Register",class: "actual_logbtn"%>
+  <%= f.submit "Reset", :type => "reset",class: "actual_logbtn" %>
+</div></td></tr>
 </table>
 <% end %>

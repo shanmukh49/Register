@@ -1,122 +1,153 @@
 <h1>Student Information</h1>
-<p>
+<table class="table">
+<tr><td></td>
+  <td><div class="field">
 	<b>Date:</b>
   <%= best_in_place @user, :date %>
-</p>
+</div></td></tr>
 
-<p>
+<tr> <td><div class="field">
   <b>Name:</b>
   <%= best_in_place @user, :name,:type => :input %>
-</p>
-<p>
-	<%= link_to(image_tag(@user.photo.url(:original)), @user.photo.url) if @user.photo? %>
+</div></td></tr>
+    <tr><td></td>
+      <td><div class="photo">
+	<%= link_to(image_tag(@user.photo.url(:thumb)), @user.photo.url) if @user.photo? %>
 
-	</p>
-
-	<p>
+	</div></td></tr>
+    <tr><td><div class="field">
   <b>Gender:</b>
   <%= best_in_place @user, :gender, type: :select, collection: [["Male", "Male"], ["Female", "Female"], ["", "Unspecified"]] %>
-</p>
-<p>
+</div></td></tr>
+<tr> <td><div class="field">
+  <b>Address:</b>
+  <%= best_in_place @user, :address,:type => :input %>
+</div></td></tr>
+    <tr><td><div class="field">
   <b>Telephone No:</b>
   <%= best_in_place @user, :telephone,:type => :input %>
-</p>
-<p>
+</div></td>
+  <td><div class="mobile">
   <b>Mobile:</b>
   <%= best_in_place @user, :mobile,:type => :input %>
-</p>
-<p>
+</div></td></tr>
+ <tr> <td><div class="field">
   <b>Email Address:</b>
   <%= best_in_place @user, :email %>
-</p>
-<p>
+</div></td></tr>
+  <tr><td> <div class="field">
   <b>Course Enrolled:</b>
   <%= best_in_place @user, :course_enrolled,:type => :input %>
-</p>
-<p>
+</div></td></tr>
+  <tr><td><div class="field">
   <b>Educational Qualifications:</b>
   <%= best_in_place @user, :education %>
-</p>
-
-<p>
+</div></td></tr>
+  <tr><td><div class="field">
   <b>College Name:</b>
   <%= best_in_place @user, :college_name %>
-</p>
-	<p>
+</div></td></tr>
+  <tr><td><div class="field">
   <b>Address:</b>
   <%= best_in_place @user, :caddress,type: :textarea %>
-</p>
-
-
-<p>
+</div></td></tr>
+  <tr><td><div class="field">
   <b>Branch/semeseter:</b>
   <%= best_in_place @user, :branch %>
-</p>
-<p>
+</div></td>
+  <td><div class="field">
 	<b>Course Interested:</b>
   <%= best_in_place @user, :course_intrested, type: :textarea %>
-</p>
-<p>
+</div></td></tr>
+
+  <tr><td><div class="field">
 	<b>How you would like us to contact you?</b>
   <%= best_in_place @user, :contact_you %>
-</p>
-<p>
+</div></td></tr>
+
+  <tr>
+   <th> <b>Program Information</b></th></tr>
+  <tr><th><b>(to be filled by the Admin)</b></th></tr>
+
+  <tr><td><div class="field">
 	<b>Program Name (as registered with Siltek):</b>
   <%= best_in_place @user, :program_name %>
-</p>
-
-<p>
+ </div></td></tr>
+  <tr><td><div class="field">
 	<b>Program In-charge:</b>
   <%= best_in_place @user, :program_incharge %>
-</p>
-<p>
+</div></td></tr>
+  <tr><td><div class="field">
 	<b>Program Duration in Hours:</b>
   <%= best_in_place @user, :program_hour %>
-</p>
-<p>
+</div></td>
+  <td><div class="field">
 	<b>Program Duration in Weeks:</b>
   <%= best_in_place @user, :program_week %>
-</p>
-<p>
+</div></td></tr>
+  <tr><td>
+  <div class="field">
 	<b>Program Start Date:</b>
   <%= best_in_place @user, :start %>
-</p>
-<p>
+</div></td>
+  <td> <div class="field">
 	<b>Program End Date: </b>
   <%= best_in_place @user, :end %>
-</p>
-<p><b>Fees Details: </b>
-	<b>Registration/Application Fee: </b>
+<tr>
+   <td> <b>Fees Details:</b></td></tr>
+  <tr><td><b>Program Costs</b></td>
+    <td><b>Amount</b></td></tr>
+  
+  <tr><td><div class="field">
+    <b>Registration / Application Fee:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <%= best_in_place @user, :rfee %>
-</p>
-<p>
-	<b>Course Fee: </b>
+</div></td></tr>
+  <tr><td><div class="field">
+    <b>Course Fee:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <%= best_in_place @user, :cfee %>
-</p>
-<p>
-	<b>Course Material /Other (please specify): </b>
+</div></td></tr>
+
+  <tr><td><div class="field">
+	<b>Course Material /Other (please specify): </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <%= best_in_place @user, :cmaterial %>
-</p>
-<p>
-	<b>TOTAL PROGRAM COST:</b>
+</div></td></tr>
+
+  <tr><td><div class="field">
+	<b>TOTAL PROGRAM COST:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <%= best_in_place @user, :total_cost %>
-</p>
+</div></td></tr>
+<table border="0" cellspacing="5" cellpadding="5" class="table">
+      
+   <th> <b>STUDENT DECLARATION</b></th>
+  <tr><td><b>I DECLARE THAT:</b></td></tr>
+    <tr><td><li>If selected for project/training/placement program of Siltek Software solutions (I) Pvt. Ltd., I agree to abide by the rules and regulations of this enrolment for the program;</li></td></tr>
+  <tr><td><li>I have provided evidence to prove that I meet all the admission requirements for this program of study;</li></td></tr>
+<tr><td><li>I am responsible for my own safety while inside the Siltek premises and shall follow all safety precautions.</li></td></tr>
+<tr><td><li>I will not disclose to anyone any technical information relating to the project/training program without prior permission from concerned authorities of Siltek.</li></td></tr>
+<tr><td><li>The information provided is true and accurate to the best of my knowledge.</li></td></tr>
 
-<p>
-	<%= link_to(image_tag(@user.avatar.url(:original)), @user.avatar.url) if @user.avatar? %>
 
-	</p>
-<p>
+  <tr><td><div class="photo">
+	<%= link_to(image_tag(@user.avatar.url(:thumb)), @user.avatar.url) if @user.avatar? %>
+
+	</div></td>
+
+<td><div class="date">
 	<b>Date:</b>
   <%= best_in_place @user, :sdate %>
-</p>
-	<p>
-	<%= link_to(image_tag(@user.image.url(:original)), @user.image.url) if @user.image? %>
+</div></td></tr>
+      <tr><th> <b>COMPANY DECLARATION</b></th></tr>
+  <tr><td width="900">The Company agrees to deliver the program according to the terms of this contract and certifies that the student has met the admission requirements for the program of study.</td></tr>
+      
+  <tr><td width="900"><div class="photo">
+	<%= link_to(image_tag(@user.attach.url(:thumb)), @user.attach.url) if @user.attach? %>
 
-	</p>
-	<p>
+	</div></td>
+<td><div class="date">
 	<b>Date:</b>
   <%= best_in_place @user, :rdate %>
-</p>
-
+</div></td></tr>
+</table>
+<div id="edit">
 <%= link_to 'Edit Profile', edit_user_path(@user) %>
+</div>
