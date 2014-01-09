@@ -10,6 +10,7 @@ body {
   background-color: #4B7399;
   font-family: Verdana, Helvetica, Arial;
   font-size: 14px;
+  text-rendering: optimize-speed;
 }
 
 a img {
@@ -126,7 +127,7 @@ form#new_user.simple_form.new_user{
   
    display: block;
     left: 2.73%;
-    margin-left: 270px;
+    margin-left: 240px;
     position: absolute;
     top: 8px;
     width: 800px;
@@ -267,4 +268,26 @@ input, label {
    margin-left: 520px;
 }
 
+
+@media print {
+  body {
+    background-color: #FFF;
+    text-rendering: optimize-speed;
+  }
+
+  #container {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  
+  #line_items {
+    page-break-before: always;
+  }
+  
+  #pdf_link {
+    display: none;
+  }
+}
 

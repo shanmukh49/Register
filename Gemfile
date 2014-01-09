@@ -7,7 +7,8 @@ gem 'therubyracer'
 gem 'execjs'
 gem "paperclip"
   gem 'simple_form'
-
+# gem 'pdfkit'
+gem 'pdfkit', :require => 'pdfkit'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

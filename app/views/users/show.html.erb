@@ -7,7 +7,7 @@
 </div></td></tr>
 
 <tr> <td><div class="field">
-  <b>Name:</b>
+  <b>1.Name:</b>
   <%= best_in_place @user, :name,:type => :input %>
 </div></td></tr>
     <tr><td></td>
@@ -16,15 +16,15 @@
 
 	</div></td></tr>
     <tr><td><div class="field">
-  <b>Gender:</b>
+  <b>2.Gender:</b>
   <%= best_in_place @user, :gender, type: :select, collection: [["Male", "Male"], ["Female", "Female"], ["", "Unspecified"]] %>
 </div></td></tr>
 <tr> <td><div class="field">
-  <b>Address:</b>
+  <b>3.Address:</b>
   <%= best_in_place @user, :address,:type => :input %>
 </div></td></tr>
     <tr><td><div class="field">
-  <b>Telephone No:</b>
+  <b>4.Telephone No:</b>
   <%= best_in_place @user, :telephone,:type => :input %>
 </div></td>
   <td><div class="mobile">
@@ -32,15 +32,15 @@
   <%= best_in_place @user, :mobile,:type => :input %>
 </div></td></tr>
  <tr> <td><div class="field">
-  <b>Email Address:</b>
+  <b>5.Email Address:</b>
   <%= best_in_place @user, :email %>
 </div></td></tr>
   <tr><td> <div class="field">
-  <b>Course Enrolled:</b>
+  <b>6.Course Enrolled:</b>
   <%= best_in_place @user, :course_enrolled,:type => :input %>
 </div></td></tr>
   <tr><td><div class="field">
-  <b>Educational Qualifications:</b>
+  <b>7.Educational Qualifications:</b>
   <%= best_in_place @user, :education %>
 </div></td></tr>
   <tr><td><div class="field">
@@ -61,24 +61,24 @@
 </div></td></tr>
 
   <tr><td><div class="field">
-	<b>How you would like us to contact you?</b>
+	<b>8.How you would like us to contact you?</b>
   <%= best_in_place @user, :contact_you %>
 </div></td></tr>
+</table>
 
-  <tr>
-   <th> <b>Program Information</b></th></tr>
-  <tr><th><b>(to be filled by the Admin)</b></th></tr>
-
+  <h1>Program Information</h1>
+  <h1>(to be filled by the Admin)</h1>
+<table class="table">
   <tr><td><div class="field">
-	<b>Program Name (as registered with Siltek):</b>
+	<b>9.Program Name (as registered with Siltek):</b>
   <%= best_in_place @user, :program_name %>
  </div></td></tr>
   <tr><td><div class="field">
-	<b>Program In-charge:</b>
+	<b>10.Program In-charge:</b>
   <%= best_in_place @user, :program_incharge %>
 </div></td></tr>
   <tr><td><div class="field">
-	<b>Program Duration in Hours:</b>
+	<b>11.Program Duration in Hours:</b>
   <%= best_in_place @user, :program_hour %>
 </div></td>
   <td><div class="field">
@@ -94,7 +94,7 @@
 	<b>Program End Date: </b>
   <%= best_in_place @user, :end %>
 <tr>
-   <td> <b>Fees Details:</b></td></tr>
+   <td> <b>12.Fees Details:</b></td></tr>
   <tr><td><b>Program Costs</b></td>
     <td><b>Amount</b></td></tr>
   
@@ -116,9 +116,11 @@
 	<b>TOTAL PROGRAM COST:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <%= best_in_place @user, :total_cost %>
 </div></td></tr>
-<table border="0" cellspacing="5" cellpadding="5" class="table">
+</table>
+
       
-   <th> <b>STUDENT DECLARATION</b></th>
+   <h1>STUDENT DECLARATION</h1>
+   <table border="0" cellspacing="5" cellpadding="5" class="table">
   <tr><td><b>I DECLARE THAT:</b></td></tr>
     <tr><td><li>If selected for project/training/placement program of Siltek Software solutions (I) Pvt. Ltd., I agree to abide by the rules and regulations of this enrolment for the program;</li></td></tr>
   <tr><td><li>I have provided evidence to prove that I meet all the admission requirements for this program of study;</li></td></tr>
@@ -136,7 +138,9 @@
 	<b>Date:</b>
   <%= best_in_place @user, :sdate %>
 </div></td></tr>
-      <tr><th> <b>COMPANY DECLARATION</b></th></tr>
+</table>
+      <h1>COMPANY DECLARATION</h1>
+    <table class="table">
   <tr><td width="900">The Company agrees to deliver the program according to the terms of this contract and certifies that the student has met the admission requirements for the program of study.</td></tr>
       
   <tr><td width="900"><div class="photo">
@@ -150,4 +154,9 @@
 </table>
 <div id="edit">
 <%= link_to 'Edit Profile', edit_user_path(@user) %>
+
+
+<p id="pdf_link"><%= link_to "Print", user_path(@user, :format => "pdf") %></p>
+
+
 </div>

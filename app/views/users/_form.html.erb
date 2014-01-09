@@ -6,7 +6,7 @@
     <%= f.input :date,label:"Date:", as: :date %>
   </div></td></tr>
  <tr> <td><div class="field">
-    <%= f.input :name %>
+    <%= f.input :name,label:"1.Name:" %>
   </div></td></tr>
     <tr><td></td>
       <td><div class="photo">
@@ -14,30 +14,30 @@
     </div></td></tr>
     <tr><td><div class="field">
    
-     <%= f.input :gender ,label:"Gender:",as: :radio_buttons,:collection => %w[Male Female] %>
+     <%= f.input :gender ,label:"2.Gender:",as: :radio_buttons,:collection => %w[Male Female] %>
     
   </div></td></tr>
     <tr><td><div class="field">
-    <%= f.input :address,label:"Address:",as: :text,:input_html => { :cols => 13, :rows => 1 } %>
+    <%= f.input :address,label:"3.Address:",as: :text,:input_html => { :cols => 13, :rows => 1 } %>
   </div></td></tr>
   <tr><td><div class="field">
    
-  <%= f.input :telephone,label:"Telephone No:" %>
+  <%= f.input :telephone,label:"4.Telephone No:" %>
   </div></td>
   <td><div class="mobile">
     <%= f.input :mobile,label:"Mobile:" %>
   </div></td></tr>
  <tr> <td><div class="field">
-    <%= f.input :email ,label:"Email Address:",as: :email %>
+    <%= f.input :email ,label:"5.Email Address:",as: :email %>
   </div></td></tr>
   <tr><td> <div class="field">
-    <%= f.input :course_enrolled,label:"Course Enrolled:" %>
+    <%= f.input :course_enrolled,label:"6.Course Enrolled:" %>
   </div></td></tr>
   <tr><td><div class="field">
      <%#= f.label :Educational_Qualifications,"Educational Qualifications:" %>
    
 
-<%= f.input :education,as: :check_boxes,label:"Educational Qualifications:", :collection => %w[B.Tech M.Tech M.C.A M.B.A ] %>
+<%= f.input :education,as: :check_boxes,label:"7.Educational Qualifications:", :collection => %w[B.Tech M.Tech M.C.A M.B.A ] %>
 
 
 
@@ -58,26 +58,23 @@
   <tr><td><div class="field">
     
 
-<%= f.input :contact_you, as: :check_boxes,label: "How you would like us to contact you?", :collection => %w[By-Email By-Phone By-SMS] %>
-
+<%= f.input :contact_you, as: :check_boxes,label: "8.How you would like us to contact you?", :collection => %w[By-Email By-Phone By-SMS] %>
   
-   
   </div></td></tr>
-
-  <tr>
-   <th> <b>Program Information</b></th></tr>
-  <tr><th><b>(to be filled by the Admin)</b></th></tr>
-
+</table>
+  <h1>Program Information</h1>
+  <h1>(to be filled by the Admin)</h1>
+<table class="table">
   <tr><td><div class="field">
 
-<%= f.input :program_name,label: "Program Name (as registered with Siltek):" %>
+<%= f.input :program_name,label: "9.Program Name (as registered with Siltek):" %>
     
   </div></td></tr>
   <tr><td><div class="field">
-    <%= f.input :program_incharge %>
+    <%= f.input :program_incharge,label:"10.Program In-charge:" %>
   </div></td></tr>
   <tr><td><div class="field">
-    <%= f.input :program_hour,label: "Program Duration in Hours:" %>
+    <%= f.input :program_hour,label: "11.Program Duration in Hours:" %>
 
   </div></td>
   <td><div class="field">
@@ -92,7 +89,7 @@
   <td> <div class="field">
     <%= f.input :end,as: :date,label: "Program End Date:",:start_year => 2012 %></div></td></tr>
   <tr>
-   <td> <b>Fees Details:</b></td></tr>
+   <td> <b>12.Fees Details:</b></td></tr>
   <tr><td><b>Program Costs</b></td>
     <td><b>Amount</b></td></tr>
   
@@ -111,37 +108,43 @@
   <tr><td><div class="field">
     <%= f.input :total_cost, label: "TOTAL PROGRAM COST:" %>
       </div></td></tr>
-<table border="0" cellspacing="5" cellpadding="5" class="table">
+</table>
       
-   <th> <b>STUDENT DECLARATION</b></th>
+   <h1>STUDENT DECLARATION</h1>
+   <table border="0" cellspacing="5" cellpadding="5" class="table">
   <tr><td><b>I DECLARE THAT:</b></td></tr>
     <tr><td><li>If selected for project/training/placement program of Siltek Software solutions (I) Pvt. Ltd., I agree to abide by the rules and regulations of this enrolment for the program;</li></td></tr>
   <tr><td><li>I have provided evidence to prove that I meet all the admission requirements for this program of study;</li></td></tr>
 <tr><td><li>I am responsible for my own safety while inside the Siltek premises and shall follow all safety precautions.</li></td></tr>
 <tr><td><li>I will not disclose to anyone any technical information relating to the project/training program without prior permission from concerned authorities of Siltek.</li></td></tr>
 <tr><td><li>The information provided is true and accurate to the best of my knowledge.</li></td></tr>
+</table>
 
+<table class="table">
 
   <tr><td><div class="photo">
   <%= f.input :avatar, as: :file, label: "Student Signature" %>
           </div></td>
 
 <td><div class="date">
-    <%= f.input :sdate,as: :date,label: "Date" %>
+    <%= f.input :sdate,as: :date,label: "Date:" %>
       </div></td></tr>
-      <tr><th> <b>COMPANY DECLARATION</b></th></tr>
+    </table>
+      <h1>COMPANY DECLARATION</h1>
+      <table class="table">
   <tr><td width="700">The Company agrees to deliver the program according to the terms of this contract and certifies that the student has met the admission requirements for the program of study.</td></tr>
-      
-  <tr><td><div class="photo">
+      </table>
+       <table class="table">
+  <tr><td width="700"><div class="photo">
     <%= f.input :attach, as: :file, label: "Signature of the Representative" %>
     </div></td>
 <td><div class="date">
-  <%= f.input :rdate ,as: :date,label: "Date" %>
+  <%= f.input :rdate ,as: :date,label: "Date:" %>
   </div></td></tr>
 </table>
   <tr><td><div id="reset">
 <%= f.submit "Register",class: "actual_logbtn"%>
   <%= f.submit "Reset", :type => "reset",class: "actual_logbtn" %>
 </div></td></tr>
-</table>
+
 <% end %>
